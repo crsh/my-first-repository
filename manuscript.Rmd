@@ -2,13 +2,13 @@
 title             : "Biased estimates of implicit and explicit learning in applications of the process-dissociation procedure to the SRT task"
 shorttitle        : "Biased PD estimates in sequence learning"
 
-author: 
-  - name          : "Christoph Stahl"
+author:
+  - name          : "Marius Barth"
     affiliation   : ""
     corresponding : yes    # Define only one corresponding author
     address       : "Herbert-Lewin-Straße 2, 50931 Köln"
     email         : "christoph.stahl@uni-koeln.de"
-  - name          : "Marius Barth"
+  - name          : "Christoph Stahl"
     affiliation   : ""
   - name          : "Hilde Haider"
     affiliation   : ""
