@@ -1,6 +1,6 @@
 ---
-title             : "Distorted estimates of implicit and explicit learning in applications of the process-dissociation procedure to the SRT task"
-shorttitle        : "Distorted PD estimates in sequence learning"
+title             : "Biased estimates of implicit and explicit learning in applications of the process-dissociation procedure to the SRT task"
+shorttitle        : "Biased PD estimates in sequence learning"
 
 author: 
   - name          : "Christoph Stahl"
