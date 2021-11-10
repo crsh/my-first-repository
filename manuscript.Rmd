@@ -78,9 +78,6 @@ knitr::opts_knit$set(global.par = TRUE)
 par(font.main = 1, las = 1)
 ```
 
-Implicit learning refers to the ability to adapt to regularities inherent in the environment in the absence of conscious awareness about the ongoing learning process itself or about the outcome of what is learned. 
-This ability is fundamental for human beings as it allows us to act optimally in stable environments with relatively little effort. 
-
 One of the most frequently utilized paradigms in the field of implicit learning is the serial reaction time task (SRTT) originating from @nissen_attentional_1987. 
 In this standard SRTT, participants respond to locations on the screen which are mapped to spatially corresponding keys. 
 Participants are instructed to press the appropriate response key whenever an asterisk occurs at a certain screen location. 
@@ -101,10 +98,7 @@ After SRTT training, participants are asked to generate a sequence of responses 
 To the degree that explicit knowledge is available, the proportion of generated responses that match the learned sequence should differ between inclusion and exclusion.
 To the degree that implicit knowledge is available, the proportion of matching responses in the exclusion condition should be greater than a chance baseline or control condition.
 In one group (i.e., RSI = 0 ms), participants were better than chance in their ability to reproduce the regularity in the sequence, even under exclusion instructions (i.e., performance under exclusion condition, $E$, was above a chance baseline $B$, $E>B$), a finding that was interpreted as reflecting sequence knowledge.
-However, performance under inclusion ($I$) and exclusion instructions was identical (i.e., $I=E$), a finding that is interpreted as indicating the absence of explicit knowledge and instead suggests that the sequence knowledge was fully implicit.[^control-sequence-designs]
-
-[^control-sequence-designs]:
-Note that the $E>B$ pattern could not be replicated in other studies [@wilkinson_intentional_2004; @norman_fringe_2006] that, as a baseline, compared generation performance with that for a *control sequence* instead of an a-priori fixed value.
+However, performance under inclusion ($I$) and exclusion instructions was identical (i.e., $I=E$), a finding that is interpreted as indicating the absence of explicit knowledge and instead suggests that the sequence knowledge was fully implicit.
 
 The PD procedure is a simple and elegant way to disentangle controllable and uncontrollable processes, which has been widely used across a wide range of research questions [@yonelinas_processdissociation_2012] and has the potential to address many open questions in the domain of implicit learning and memory. 
 However, some authors have raised concerns suggesting that the assumptions underlying the PD may sometimes turn out to be overly simplified, which, in turn, would threaten the validity of PD results [e.g., @buchner_unbiased_1995; @klauer_invariance_2015; @hirshman_logic_1998; @rouder_hierarchical_2008; @curran_violations_1995].
@@ -352,7 +346,7 @@ tmp.perm <- acquisition[
 ]
 
 out.perm <- apa_print(
-  aov_ez(data = tmp.perm, dv = "SRI", within = c("block", "frequency"), id = "id")
+  aov_ez(data = tmp.perm, dv = "SRI", within = c("block", "frequency"), id = "id", type = 2)
 )
 
 apa_lineplot(
@@ -371,7 +365,7 @@ apa_lineplot(
 
 
 out <- apa_print(
-  aov_ez(data = tmp, dv = "SRI", id = "id", between = "material", within = "block")
+  aov_ez(data = tmp, dv = "SRI", id = "id", between = "material", within = "block", type = 2)
 )
 ```
 
@@ -439,17 +433,17 @@ tmp2 <- aggregate(
 
 # ANOVA for complete design
 out <- apa_print(
-  aov_ez(data = tmp2, id = "id", dv = "correct_SOC", between = c("material", "generation", "order"), within = "PD_instruction")
+  aov_ez(data = tmp2, id = "id", dv = "correct_SOC", between = c("material", "generation", "order"), within = "PD_instruction", type = 2)
 )
 
 # separate analysis for free-generation task
 tmp.a <- tmp2[tmp2$generation == "Free", ]
 out.a <- apa_print(
-  aov_ez(data = tmp.a, id = "id", dv = "correct_SOC", between = c("material", "order"), within = "PD_instruction")
+  aov_ez(data = tmp.a, id = "id", dv = "correct_SOC", between = c("material", "order"), within = "PD_instruction", type = 2)
 )
 
 # Post-hoc paired comparisons for free-generation group
-fit <- aov_ez(data = tmp.a, id = "id", dv = "correct_SOC", between = c("material", "order"), within = "PD_instruction")
+fit <- aov_ez(data = tmp.a, id = "id", dv = "correct_SOC", between = c("material", "order"), within = "PD_instruction", type = 2)
 tukey <- apa_print(pairs(emmeans(fit, specs = "material"), adjust = "tukey"))
 ```
 
@@ -543,7 +537,7 @@ apa_barplot(
 )
 
 # ANOVA for full design
-model <- aov_ez(data = tmp, id = "id", dv = "was_cue", between = c("material", "order"), within = "PD_instruction")
+model <- aov_ez(data = tmp, id = "id", dv = "was_cue", between = c("material", "order"), within = "PD_instruction", type = 2)
 out <- apa_print(model)
 
 # post-hoc pairwise comparisons
@@ -552,11 +546,11 @@ tukey <- apa_print(pairs(emmeans(model, specs = "material")))
 
 # analyse blocks separately (extract only `full_result` to output object)
 out_1st <- apa_print(
-  aov_ez(data = tmp[tmp$block == "first", ], id = "id", dv = "was_cue", between = c("material", "PD_instruction"))
+  aov_ez(data = tmp[tmp$block == "first", ], id = "id", dv = "was_cue", between = c("material", "PD_instruction"), type = 2)
 )$full_result
 
 out_2nd <- apa_print(
-  aov_ez(data = tmp[tmp$block == "second",], id = "id", dv = "was_cue", between = c("material","PD_instruction"))
+  aov_ez(data = tmp[tmp$block == "second",], id = "id", dv = "was_cue", between = c("material","PD_instruction"), type = 2)
 )$full_result
 ```
 
