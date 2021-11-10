@@ -1,5 +1,5 @@
 
-(ref:table-caption) Means ($M$) and standard errors ($\mathit{SE}$) of relative frequency of correctly generated second-order conditionals (SOCs).
+(ref:table-caption) Average ($M$) and standard errors ($\mathit{SE}$) of relative frequency of correctly generated second-order conditionals (SOCs).
 
 
 ```{r}

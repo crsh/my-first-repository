@@ -78,7 +78,7 @@ knitr::opts_knit$set(global.par = TRUE)
 par(font.main = 1, las = 1)
 ```
 
-Implicit learning refers to the ability to adapt to regularities inherent in the environment in the absence of conscious awareness about the ongoing learning process itself or about the outcome of what is learned. 
+Implicit learning refers to the ability to adapt to regularities inherent in the environment in the absence of conscious awareness about the outcome of what is learned. 
 This ability is fundamental for human beings as it allows us to act optimally in stable environments with relatively little effort. 
 
 One of the most frequently utilized paradigms in the field of implicit learning is the serial reaction time task (SRTT) originating from @nissen_attentional_1987. 
