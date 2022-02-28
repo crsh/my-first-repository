@@ -15,7 +15,7 @@ author:
 
 affiliation:
   - id            : ""
-    institution   : "University of Cologne"
+    institution   : "Wilhelm-Wundt University"
 
 authornote: |
   This work was funded by Deutsche Forschungsgemeinschaft grants STA-1269/1-1 and HA-5447/8-1.
